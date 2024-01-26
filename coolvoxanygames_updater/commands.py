@@ -4,7 +4,7 @@ import discord
 
 from coolvoxanygames_updater import autocompletions
 
-@discord.commands.application_command(description="Ping the bot")
+@discord.commands.application_command(description="Upload an update")
 async def update(
         ctx: discord.ApplicationContext, 
         file: discord.Option(discord.SlashCommandOptionType.attachment, description="Game zip file"),

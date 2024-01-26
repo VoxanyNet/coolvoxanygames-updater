@@ -27,5 +27,7 @@ async def update(
         await ctx.respond("Failed to unpack update", ephemeral=True)
 
         return
+    
+    game_link = f"https://games.voxany.net/games/{game}/index.html)".replace(" ", "%20")
 
-    await ctx.respond(f"**Update complete!** ✅ \n\n[Play it!](https://games.voxany.net/games/{game}/index.html)".replace(" ", "%20"), ephemeral=True)
+    await ctx.respond(f"**Update complete!** ✅ \n\n[Play it!]({game_link})", ephemeral=True)

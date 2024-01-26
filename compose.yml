@@ -3,8 +3,8 @@ services:
     build: .
     environment:
       - COOLVOXANYGAMES_UPDATER_BOT_DISCORD_TOKEN=${COOLVOXANYGAMES_UPDATER_BOT_DISCORD_TOKEN}
-      - COOLVOXANYGAMES_UPDATER_GAMES_FOLDER="/var/coolvoxanygames/games"
-      - COOLVOXANYGAMES_UPDATER_OWNED_GAMES_FILE="/var/coolvoxanygames/owned_games.json"
+      - COOLVOXANYGAMES_UPDATER_GAMES_FOLDER=/var/coolvoxanygames/games
+      - COOLVOXANYGAMES_UPDATER_OWNED_GAMES_FILE=/var/coolvoxanygames/owned_games.json
     
     volumes:
       - type: bind 

@@ -1,5 +1,4 @@
-from typing import Dict, Type
-import uuid
+from collections import defaultdict
 
 import discord
 
@@ -13,7 +12,8 @@ class CoolVoxanyGamesUpdater(discord.Bot):
         super().__init__(description, intents=intents, *args, **options)
         
         self.games_folder = games_folder
-        self.owned_games = owned_games
+        self.owned_games = defaultdict(list)
+        self.owned_games.update(owned_games)
     
         self.add_application_command(commands.update)
 

@@ -11,7 +11,7 @@ async def update(
         game: discord.Option(str, autocomplete=autocompletions.owned_games)
     ):
 
-    if game not in ctx.bot.owned_games[ctx.interaction.user.id]:
+    if game not in ctx.bot.owned_games[str(ctx.interaction.user.id)]:
         await ctx.respond(f"You do not own {game}", ephemeral=True)
         return
     

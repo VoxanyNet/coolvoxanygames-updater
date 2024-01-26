@@ -5,9 +5,9 @@ from coolvoxanygames_updater import bot
 
 DISCORD_TOKEN = os.environ["COOLVOXANYGAMES_UPDATER_BOT_DISCORD_TOKEN"]
 GAMES_PATH = os.environ["COOLVOXANYGAMES_UPDATER_GAMES_FOLDER"]
-OWNED_GAMES_PATH = os.environ["COOLVOXANYGAMES_UPDATER_OWNED_GAMES_FILE"]
+CONFIG_DIRECTORY = os.environ["COOLVOXANYGAMES_CONFIG_DIRECTORY"]
 
-with open(OWNED_GAMES_PATH, "w") as file:
+with open(f"{CONFIG_DIRECTORY}/owned_games.json", "w") as file:
     owned_games = json.load(file)
 
 bot = bot.CoolVoxanyGamesUpdater(games_folder=GAMES_PATH, owned_games=owned_games)

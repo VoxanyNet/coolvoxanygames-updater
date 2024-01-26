@@ -12,7 +12,7 @@ async def update(
     ):
 
     if game not in ctx.bot.owned_games[str(ctx.interaction.user.id)]:
-        await ctx.respond(f"You do not own {game}", ephemeral=True)
+        await ctx.respond(f"You do not own **{game}**", ephemeral=True)
         return
     
     ZIP_SAVE_PATH = f"/tmp/{file.filename}"
@@ -32,6 +32,6 @@ async def update(
 
         return
     
-    game_link = f"https://games.voxany.net/games/{game}/index.html)".replace(" ", "%20")
+    game_link = f"https://games.voxany.net/games/{game}/index.html".replace(" ", "%20")
 
     await ctx.respond(f"**Update complete!** ✅ \n\n[Play it!]({game_link})", ephemeral=True)

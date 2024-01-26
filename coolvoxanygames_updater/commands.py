@@ -10,6 +10,10 @@ async def update(
         file: discord.Option(discord.SlashCommandOptionType.attachment, description="Game zip file"),
         game: discord.Option(str, autocomplete=autocompletions.owned_games)
     ):
+
+    if game not in ctx.bot.owned_games[ctx.interaction.user.id]:
+        await ctx.respond(f"You do not own {game}", ephemeral=True)
+        return
     
     ZIP_SAVE_PATH = f"/tmp/{file.filename}"
     USER_GAME_PATH = f"{ctx.bot.games_folder}/{game}"

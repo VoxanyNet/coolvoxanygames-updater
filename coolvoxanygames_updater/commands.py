@@ -28,4 +28,4 @@ async def update(
 
         return
 
-    await ctx.respond(f"**Update complete!** ✅ \n\n[Play it!](https://games.voxany.net/games/{game}/index.html)", ephemeral=True)
+    await ctx.respond(f"**Update complete!** ✅ \n\n[Play it!](https://games.voxany.net/games/{game}/index.html)".replace(" ", "%20"), ephemeral=True)
